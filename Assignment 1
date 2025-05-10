@@ -1,0 +1,30 @@
+# Base class
+class Smartphone:
+    def __init__(self, brand, model, storage):
+        self.brand = brand
+        self.model = model
+        self.storage = storage
+
+    def make_call(self, number):
+        print(f"📞 Calling {number} from {self.model}...")
+
+    def info(self):
+        print(f"{self.brand} {self.model} with {self.storage}GB storage")
+
+# Subclass with additional behavior
+class Smartwatch(Smartphone):
+    def __init__(self, brand, model, storage, strap_type):
+        super().__init__(brand, model, storage)
+        self.strap_type = strap_type
+
+    def info(self):
+        print(f"{self.brand} {self.model} smartwatch with {self.strap_type} strap and {self.storage}GB storage")
+
+# Create instances
+phone = Smartphone("Apple", "iPhone 14", 128)
+watch = Smartwatch("Samsung", "Galaxy Watch 5", 16, "Silicone")
+
+phone.info()
+phone.make_call("123-456-7890")
+watch.info()
+watch.make_call("987-654-3210")
